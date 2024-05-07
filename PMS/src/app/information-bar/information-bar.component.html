@@ -1,0 +1,60 @@
+
+<!-- home informaton bar -->
+<div class="container" *ngIf="ACroute === 'home'">
+    <div class="home-content">
+        <div class="home-title">
+            <p class="home-name">Welcome {{user}}</p> 
+            <p class="home-p"> {{profition}}</p>
+        </div>
+        <img src="./../../assets/home.png" alt="" class="home-img">
+
+    </div>
+</div>
+<!-- inforamtion bar usine -->
+<div class="container_usine" *ngIf="ACroute === 'fact'">
+    <div class="usine-content">
+        <div class="usine-title">
+            <p class="usine-name">{{usinName}}</p> 
+            <p class="usine-inforamtion"> Chef d'usine : {{chef}}</p>
+            <p class="usine-inforamtion">Nombre de Personnel : {{nombrePersonne}}</p>
+            <p class="usine-inforamtion">Nombre de machines : {{nombreMUsine}}</p>
+        </div>
+        <img src="./../../assets/usine.png" alt="" class="usine-img">
+
+    </div>
+</div>
+
+<!-- atelier inforation -->
+<div class="container" *ngIf="ACroute === 'atelier'">
+    <div class="atelier-content">
+        <div class="atelier-title">
+            <p class="atelier-name">{{AtelierName}}</p> 
+            <div class="atelier-row">
+                <div class="atelier-column">
+                    <p class="atelier-inforamtion"> Chef d'atelier : {{chefAtelier}}</p>
+                    <p class="atelier-inforamtion">Nombre de Personnel : {{nombrePAtelier}}</p>
+                </div>
+                <div>
+                    <p class="atelier-inforamtion">Nombre de machines : {{nombremachine}}</p>
+                    <p class="atelier-inforamtion">Capacité théorique maximale: {{capaciteAtelier}}</p>
+                </div>
+            </div>
+        </div>
+        <img src="./../../assets/worckshop.png" alt="" class="atelier-img">
+
+    </div>
+
+<!-- <div class="container" >
+    <div class="machine-content" *ngIf="ACroute === 'machine'">
+        <div class="machine-title">
+            <p class="machine-name">{{machine}}</p> 
+            <p class="machine-inforamtion"> Responsable atelier: {{chefMachien}}</p>
+            <p class="machine-inforamtion"> Atelier id: {{atelier_id}}</p>
+            <p class="machine-inforamtion">Capacité maximale : {{capacite}}</p>
+        </div>
+        <img src="./../../assets/machine.png" alt="" class="machine-img">
+
+    </div>
+</div> -->
+
+

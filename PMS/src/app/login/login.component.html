@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="content">
+        <p class="title">Plateform de gestion de production </p>
+        <p class="lable">Login</p>
+        <div class="input">
+            <input type="text" name="login" [(ngModel)]="login">
+        </div>
+        <p  class="lable">Password</p>
+        <div class="row">
+            <div class="input">
+                <input type="password" name="password" [(ngModel)]="password" (change)="_login()">
+            </div>
+            <button class="button" (click)="_login()" >Se Connecter</button>
+        </div>
+    </div>
+</div>

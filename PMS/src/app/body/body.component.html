@@ -1,0 +1,13 @@
+<div class="container">
+    <ul>
+    
+        <li *ngFor="let item of product">
+            <div class="content" (click)="modify(item.id)">
+           <h1>{{item.titre}}</h1> 
+           <p>Quantié :{{item.quantiite}}</p>
+           <p>Durée : {{item.dure}}</p>
+           </div>
+        </li>
+</ul>
+</div>
+

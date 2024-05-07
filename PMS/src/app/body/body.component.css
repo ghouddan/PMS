@@ -1,0 +1,27 @@
+.container{
+    margin-top: 300px;
+}
+.content{
+    width: 800px;
+    height: 160px;
+    background-color: rgba(238, 240, 242, 1);
+    margin-left: 60px;
+    border-radius: 20px;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+ul{
+    list-style-type: none;
+}
+p{
+    margin-left: 40px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.content:active{
+    background-color: rgba(211, 221, 231, 1);
+    border: solid 2px black;
+    cursor: pointer;
+}

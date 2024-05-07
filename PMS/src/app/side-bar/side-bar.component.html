@@ -1,0 +1,11 @@
+<div class="home-sidebar"  *ngIf="ACroute === 'home'">
+    <!-- Sidebar content here -->
+    <button  class="logoutButton">Déconnexion</button>
+  </div>
+
+  <div class="usine-sidebar" *ngIf="ACroute === 'fact'">
+    <!-- Sidebar content here -->
+       <app-form></app-form>
+       <app-round-advance-bar></app-round-advance-bar>
+       
+  </div>

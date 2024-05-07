@@ -1,0 +1,137 @@
+/* home information bar */
+ .container{
+    background-color:rgba(211, 221, 231, 1);
+    height: 200px;
+    width: 1236px;
+    margin-top: 70px;
+    position: fixed;
+    top: 0;
+    margin-bottom: 20px;
+    
+}
+.home-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.home-p{
+    padding-left: 50px;
+    font-size: 18px;
+
+}
+.home-name{
+   font-size: 30px;
+    font-weight: bolder;
+    padding-top: 10px;
+    padding-left: 30px;
+}
+.home-img{
+    height: 150px;
+    width: 150px;
+    margin: 20px ;
+
+} 
+
+
+/* inforamtion bar usine */
+
+.usine-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    
+    
+}
+.container_usine{
+    background-color:rgba(211, 221, 231, 1);
+    height: 200px;
+    width: 1220px;
+    margin-top: 70px;
+    position: fixed;
+    top: 0;
+}
+.usine-inforamtion{
+padding-left: 80px;
+font-size: 20px;
+}
+.usine-name{
+   font-size: 32px;
+    font-weight: bolder;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+}
+.usine-img{
+    height: 100px;
+    width: 100px;
+    margin: 20px ;
+} 
+
+
+/* atelier inforamtion bar */
+
+.atelier-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    
+}
+.atelier-inforamtion{
+padding-left: 80px;
+font-size: 20px;
+}
+.atelier-name{
+   font-size: 32px;
+    font-weight: bolder;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+}
+.atelier-img{
+    height: 150px;
+    width: 150 px;
+}
+
+.atelier-row{
+    display: flex;
+    flex-direction: row;
+
+} 
+
+/* machine style */
+
+.machine-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    
+}
+.machine-inforamtion{
+padding-left: 80px;
+font-size: 20px;
+}
+.machine-name{
+   font-size: 32px;
+    font-weight: bolder;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+}
+.machine-img{
+    height: 150px;
+    width: 150 px;
+    padding-right: 10px;
+}
+
+.machine-row{
+    display: flex;
+    flex-direction: row;
+
+} 

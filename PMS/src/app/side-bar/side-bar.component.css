@@ -1,0 +1,77 @@
+.home-sidebar {
+    background-color: #2E3C88;
+    color: aliceblue;
+    width: 300px; 
+    height: 100%;
+    height: calc(100vh - 70px);
+    position: fixed;
+    top: 70px; 
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+  }
+  
+  .logoutButton{
+    
+    align-self: center;
+    position:absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+    background-color: rgba(84, 207, 215, 1);
+    border: none;
+    width: 222px;
+    height: 35px;
+    font-size: 18px;
+    }
+
+    .usine-sidebar{
+    background-color: rgba(238, 240, 242, 1);
+    color: aliceblue;
+    width: 300px; 
+    height: calc(100vh - 70px);
+    position: fixed;
+    top: 70px; 
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+
+    .container{
+      background-color: rgba(255, 255, 255, 1);
+      height: 221px;
+      width: 300;
+    }
+
+    @media screen and (max-width: 768px) {
+        .navigation {
+          width: 40%; /* Adjusted width for navigation links */
+        }
+      
+        .profile {
+          width: 30%; /* Adjusted width for profile */
+        }
+      
+        .profile-info {
+          padding-left: 20px; /* Adjusted padding for profile info */
+          width: 30%;
+        }
+      
+        .profile-image {
+          margin-right: 20px; /* Adjusted margin for profile image */
+        }
+      
+        .element p {
+          font-size: 14px; /* Adjusted font size for navigation links */
+        }
+      
+        .sidebar {
+          width: 200px; /* Adjusted width for sidebar */
+        }
+        .logoutButton{
+          width: 150px;
+        }
+      }
+      
