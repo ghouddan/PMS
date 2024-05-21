@@ -1,0 +1,33 @@
+<div class="produit">
+    <h2>Production</h2>
+    <div class="container1">
+        <div class="content">
+        <p class="p">produit</p>
+        <div class="counter"><p>{{count}}</p></div>
+
+      </div>
+      <div class="content">
+        <p class="p">Etat machine</p>
+        <!-- <angular-gradient-progressbar [type]="1" [progressBarWidth]="10" [value] ="30" [barCount]="1" [showToolTip]="false"> </angular-gradient-progressbar>   -->
+        <div class="etat" [ngClass]="{'red' : hight, 'gren': midiun, 'yelow': low}"></div>
+      </div>
+        <div class="content">
+        <p class="p">Objectif</p>
+      </div>
+      <div class="content">
+        <p class="p">Avencement</p>
+        <circle-progress name="A" [options]="optionsA" [renderOnClick]="false"  class="cercle1"></circle-progress>
+
+      </div>
+    </div>
+
+   </div>
+
+    <h2>Équipe</h2>
+    <div class="persone">
+      <p style="margin-top: 10px;">Chef d’équipe: Aymane</p>
+      <p>Ouvriers : </p>
+      <p class="Ouvriers"> Mohammed amine <br>
+        Aymane safa<br>
+        Ayoub safi</p>
+    </div>

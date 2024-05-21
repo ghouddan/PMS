@@ -1,0 +1,66 @@
+.container1{
+    width: 80%;
+    margin: auto;
+    background-color: aliceblue;
+    padding: 10px;
+    height: 340px;;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+  }
+  .p{
+    display: inline; 
+    margin-top: 10px;
+  }
+  .content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .counter{
+   font-size: 24px;
+   font-weight: bolder;
+   margin-right: 19px;
+  }
+
+  .etat{
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50px;
+    margin-right: 5px;
+  }
+  .yelow{
+    background-color: yellow;
+  }
+  .red{
+    background-color: red;
+  }
+  .gren{
+    background-color: green;
+  }
+
+
+  .persone{
+    height: 200px;
+    width: 80%;
+    margin: auto;
+    background-color: aliceblue ;
+    padding: 10px;
+  }
+
+  h2{
+    margin-left: 25px;
+    margin-bottom: 0;
+  }
+  p{
+    font-size: 18px;
+    font-weight: bolder;
+  }
+
+  .Ouvriers{
+    margin-left: 60px;
+  }

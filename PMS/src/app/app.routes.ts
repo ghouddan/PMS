@@ -7,6 +7,7 @@ import { MachinesComponent } from './machines/machines.component';
 import { AteliersComponent } from './ateliers/ateliers.component';
 import { HomeComponent } from './home/home.component';
 import { RoundAdvanceBarComponent } from './round-advance-bar/round-advance-bar.component';
+import { ProductionViewComponent } from './production-view/production-view.component';
 
 export const routes: Routes = [
     {path : '', component : LoginComponent},
@@ -16,7 +17,7 @@ export const routes: Routes = [
     {path : 'machine', component : MachinesComponent},
     {path : 'atelier', component : AteliersComponent},
     {path:'home', component:HomeComponent},
-    {path : 'bar', component : RoundAdvanceBarComponent}
+    {path : 'bar', component : ProductionViewComponent}
 
     
 ];

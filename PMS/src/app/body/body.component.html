@@ -1,4 +1,17 @@
-<div class="container">
+<div class="container" *ngIf="ACroute == 'home'">
+    <ul>
+    
+        <li *ngFor="let item of machine">
+            <div class="content" (click)="modify(item.id)">
+           <h1>{{item.nomMachine}}</h1> 
+           <p>produit :{{item.product}}</p>
+           <p>production par heur : {{item.rendement}}</p>
+           </div>
+        </li>
+</ul>
+</div>
+
+<div class="container" *ngIf="ACroute == 'fact'">
     <ul>
     
         <li *ngFor="let item of product">
@@ -9,5 +22,34 @@
            </div>
         </li>
 </ul>
+</div>
+
+
+<div class="container" *ngIf="ACroute == 'atelier'">
+    <ul>
+    
+        <li *ngFor="let item of machine">
+            <div class="content" (click)="modify(item.id)">
+           <h1>{{item.nomMachine}}</h1> 
+           <p>produit :{{item.product}}</p>
+           <p>production par heur : {{item.rendement}}</p>
+           </div>
+        </li>
+</ul>
+</div>
+
+<div class="container_etat" *ngIf="ACroute == 'machine'">
+    <h1>Etat présent:</h1>
+    <div class="etat">
+        <div class="div_flex">
+            <p>Etat :</p>
+            <p>Erreur :</p>
+        </div>
+        <p>vitesse : </p>
+        <p>Consomation : </p>
+        <p>Durée de travaille: </p>
+        
+
+    </div>
 </div>
 

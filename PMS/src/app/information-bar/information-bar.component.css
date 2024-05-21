@@ -2,11 +2,10 @@
  .container{
     background-color:rgba(211, 221, 231, 1);
     height: 200px;
-    width: 1236px;
+    width: 1220px;
     margin-top: 70px;
     position: fixed;
     top: 0;
-    margin-bottom: 20px;
     
 }
 .home-content{
@@ -135,3 +134,34 @@ font-size: 20px;
     flex-direction: row;
 
 } 
+
+
+@media screen and (max-width: 768px) {
+    .container_usine {
+      width: 20%; /* Adjusted width for navigation links */
+    }
+  
+    .usine-content{
+      width: 30%; /* Adjusted width for profile */
+    }
+  
+    .profile-info {
+      padding-left: 20px; /* Adjusted padding for profile info */
+      width: 30%;
+    }
+  
+    .profile-image {
+      margin-right: 20px; /* Adjusted margin for profile image */
+    }
+  
+    .element p {
+      font-size: 14px; /* Adjusted font size for navigation links */
+    }
+  
+    .sidebar {
+      width: 200px; /* Adjusted width for sidebar */
+    }
+    .logoutButton{
+      width: 150px;
+    }
+  }

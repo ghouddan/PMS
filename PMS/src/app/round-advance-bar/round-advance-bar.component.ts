@@ -25,10 +25,13 @@ export class RoundAdvanceBarComponent {
 
   optionsA: CircleProgressOptions = {
     ...this.options,
-    percent: 90,
+    percent: 0,
     radius: 20,
     showBackground: false,
-   
+    showSubtitle : false,
+    titleFontSize : "10",
+    outerStrokeWidth : 6,
+    innerStrokeColor : "rgba(46, 60, 136, 1)",
     innerStrokeWidth: 1,
     subtitleFormat: false, // clear subtitleFormat coming from other options, because Angular does not assign if variable is undefined.
     startFromZero: false,

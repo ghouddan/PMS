@@ -1,3 +1,6 @@
+*{
+  color: black;
+}
 .home-sidebar {
     background-color: #2E3C88;
     color: aliceblue;
@@ -25,6 +28,10 @@
     height: 35px;
     font-size: 18px;
     }
+    .logoutButton:hover{
+      cursor: pointer;
+      opacity: 0.6;
+    }
 
     .usine-sidebar{
     background-color: rgba(238, 240, 242, 1);
@@ -45,6 +52,19 @@
       width: 300;
     }
 
+    .atelier-sidebar{
+      background-color: rgba(238, 240, 242, 1);
+      color: aliceblue;
+      width: 300px; 
+      height: calc(100vh - 70px);
+      position: fixed;
+      top: 70px; 
+      right: 0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      }
+  
     @media screen and (max-width: 768px) {
         .navigation {
           width: 40%; /* Adjusted width for navigation links */
