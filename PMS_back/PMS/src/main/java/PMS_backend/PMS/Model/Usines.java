@@ -24,6 +24,8 @@ public class Usines implements Serializable{
 	    
 	    @ManyToOne
 	    @JoinColumn(name = "idChefProduction" )
+		//@JoinColumn(name = "id", nullable = false)
+
 	    private ChefProduction chefProduction; 
 
 	    public Usines() {}

@@ -14,9 +14,9 @@ import jakarta.persistence.OneToMany;
 @Entity
 public class ChefProduction extends Users implements Serializable{
 
-	@Id
+	/*@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long Iduser;
+	private Long Iduser;*/
 	
 	@OneToMany(mappedBy = "chefProduction", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Usines> usines = new ArrayList<>();
@@ -28,13 +28,13 @@ public class ChefProduction extends Users implements Serializable{
 		this.usines = usines;
 	}
 
-	public Long getIduser() {
+	/*public Long getIduser() {
 		return Iduser;
 	}
 
 	public void setIduser(Long iduser) {
 		Iduser = iduser;
-	}
+	}*/
 
 	public List<Usines> getUsines() {
 		return usines;

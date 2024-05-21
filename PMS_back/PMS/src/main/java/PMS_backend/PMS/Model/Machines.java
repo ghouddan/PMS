@@ -36,6 +36,8 @@ public class Machines implements Serializable{
 
     @ManyToOne
     @JoinColumn(name = "idChefAtelier")
+	//@JoinColumn(name = "id", nullable = false)
+
     private ChefAtelier chefAtelier;
     
     public Machines() {}

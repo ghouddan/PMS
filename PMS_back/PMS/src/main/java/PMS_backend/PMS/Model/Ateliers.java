@@ -19,7 +19,7 @@ public class Ateliers implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long idAtelier;
 	private String nomAtelier;
 	private String chefAtelier;
 	private int nombrePersonel;
@@ -33,8 +33,9 @@ public class Ateliers implements Serializable{
 	
 	
 	@ManyToOne
-    @JoinColumn(name = "Iduser")
-    private ChefUsine chefUsine;
+	@JoinColumn(name = "idChefUsine", nullable = false)
+	@JoinColumn(name = "id", nullable = false)
+	private ChefUsine chefUsine;
 	
 	
 	public Ateliers(String nomAtelier, String chefAtelier, int nombrePersonel, List<Machines> machines, Usines usine) {
@@ -49,11 +50,11 @@ public class Ateliers implements Serializable{
 	public Ateliers() {}
 
 	public Long getId() {
-		return id;
+		return idAtelier;
 	}
 
 	public void setId(Long id) {
-		this.id = id;
+		this.idAtelier = id;
 	}
 
 	public String getNomAtelier() {
