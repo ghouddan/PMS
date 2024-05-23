@@ -1,8 +1,10 @@
 package PMS_backend.PMS.Model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,10 +27,39 @@ public class Usines implements Serializable{
 	    @ManyToOne
 	    @JoinColumn(name = "idChefProduction" )
 		//@JoinColumn(name = "id", nullable = false)
-
 	    private ChefProduction chefProduction; 
+	    
+	    @OneToMany(mappedBy = "usine", cascade = CascadeType.ALL, orphanRemoval = true)
+	    private List<Objectif> objectifs = new ArrayList<>();
 
-	    public Usines() {}
+		public Usines(String nomUsine, String adresse, ChefUsine chef, List<Ateliers> atelier,
+				ChefProduction chefProduction, List<Objectif> objectifs) {
+			super();
+			this.nomUsine = nomUsine;
+			this.adresse = adresse;
+			this.chef = chef;
+			this.atelier = atelier;
+			this.chefProduction = chefProduction;
+			this.objectifs = objectifs;
+		}
+
+		public ChefProduction getChefProduction() {
+			return chefProduction;
+		}
+
+		public void setChefProduction(ChefProduction chefProduction) {
+			this.chefProduction = chefProduction;
+		}
+
+		public List<Objectif> getObjectifs() {
+			return objectifs;
+		}
+
+		public void setObjectifs(List<Objectif> objectifs) {
+			this.objectifs = objectifs;
+		}
+
+		public Usines() {}
 
 		public Usines( String nomUsine, String adresse, ChefUsine chef, List<Ateliers> atelier) {
 			super();
@@ -77,6 +108,8 @@ public class Usines implements Serializable{
 		public void setAtelier(List<Ateliers> atelier) {
 			this.atelier = atelier;
 		}
+		
+		
 		
 		
 	    

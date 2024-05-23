@@ -6,4 +6,5 @@ import PMS_backend.PMS.Model.Users;
 
 public interface UsersRepo extends JpaRepository<Users, Long>  {
 
+	public Users getUserById(Long id);
 }
