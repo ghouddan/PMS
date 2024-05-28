@@ -1,167 +1,230 @@
 /* home information bar */
- .container{
-    background-color:rgba(211, 221, 231, 1);
+/* Base container for information bars */
+.container {
+    background-color: rgba(211, 221, 231, 1);
     height: 200px;
-    width: 1220px;
+    width: calc(100% - 300px); /* Adjusted for sidebar width */
     margin-top: 70px;
+    padding: 0 20px;
+    box-sizing: border-box;
     position: fixed;
     top: 0;
-    
+    left: 0; /* Starts from the left */
 }
-.home-content{
+
+/* Home Content */
+.home-content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
-.home-p{
+
+.home-information {
     padding-left: 50px;
     font-size: 18px;
-
 }
-.home-name{
-   font-size: 30px;
+
+.home-name {
+    font-size: 30px;
     font-weight: bolder;
     padding-top: 10px;
     padding-left: 30px;
 }
-.home-img{
+
+.home-img {
     height: 150px;
     width: 150px;
-    margin: 20px ;
-
-} 
+    margin: 20px;
+}
 
 
 /* inforamtion bar usine */
 
-.usine-content{
+.container_usine {
+    background-color: rgba(211, 221, 231, 1);
+    height: 200px;
+    width: calc(100% - 300px); /* Adjusted for sidebar width */
+    margin-top: 70px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0; /* Starts from the left */
+}
+
+.usine-content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding-top: 20px;
-    
-    
 }
-.container_usine{
-    background-color:rgba(211, 221, 231, 1);
-    height: 200px;
-    width: 1220px;
-    margin-top: 70px;
-    position: fixed;
-    top: 0;
+
+.usine-information {
+    padding-left: 20px;
+    font-size: 20px;
 }
-.usine-inforamtion{
-padding-left: 80px;
-font-size: 20px;
-}
-.usine-name{
-   font-size: 32px;
+
+.usine-name {
+    font-size: 32px;
     font-weight: bolder;
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 40px;
+    padding-left: 20px;
 }
-.usine-img{
+
+.usine-img {
     height: 100px;
     width: 100px;
-    margin: 20px ;
-} 
+    margin: 20px;
+}
+
 
 
 /* atelier inforamtion bar */
 
-.atelier-content{
+.atelier-content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding-top: 20px;
-    
 }
-.atelier-inforamtion{
-padding-left: 80px;
-font-size: 20px;
+
+.atelier-information {
+    padding-left: 80px;
+    font-size: 20px;
 }
-.atelier-name{
-   font-size: 32px;
+
+.atelier-name {
+    font-size: 32px;
     font-weight: bolder;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 40px;
 }
-.atelier-img{
+
+.atelier-img {
     height: 150px;
-    width: 150 px;
+    width: 150px;
 }
 
-.atelier-row{
-    display: flex;
-    flex-direction: row;
-
-} 
-
-/* machine style */
-
-.machine-content{
+/* Machine Content */
+.machine-content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding-top: 20px;
-    
 }
-.machine-inforamtion{
-padding-left: 80px;
-font-size: 20px;
+
+.machine-information {
+    padding-left: 80px;
+    font-size: 20px;
 }
-.machine-name{
-   font-size: 32px;
+
+.machine-name {
+    font-size: 32px;
     font-weight: bolder;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 40px;
 }
-.machine-img{
+
+.machine-img {
     height: 150px;
-    width: 150 px;
+    width: 150px;
     padding-right: 10px;
 }
 
-.machine-row{
-    display: flex;
-    flex-direction: row;
-
-} 
 
 
-@media screen and (max-width: 768px) {
-    .container_usine {
-      width: 20%; /* Adjusted width for navigation links */
-    }
-  
-    .usine-content{
-      width: 30%; /* Adjusted width for profile */
-    }
-  
-    .profile-info {
-      padding-left: 20px; /* Adjusted padding for profile info */
-      width: 30%;
-    }
-  
-    .profile-image {
-      margin-right: 20px; /* Adjusted margin for profile image */
-    }
-  
-    .element p {
-      font-size: 14px; /* Adjusted font size for navigation links */
-    }
-  
-    .sidebar {
-      width: 200px; /* Adjusted width for sidebar */
-    }
-    .logoutButton{
-      width: 150px;
-    }
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .usine-content {
+      flex-direction: column;
+      align-items: flex-start;
   }
+  .usine-title {
+      width: 100%;
+  }
+  .usine-information, .usine-name {
+      padding-left: 0;
+      padding-right: 0;
+      text-align: center;
+      width: 100%;
+  }
+  .usine-img {
+      margin: 20px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .container_usine {
+      height: auto;
+      position: static;
+      margin-top: 20px;
+      padding: 10px;
+  }
+  .usine-name {
+      font-size: 24px;
+  }
+  .usine-information {
+      font-size: 16px;
+  }
+  .usine-img {
+      height: 40px;
+      width: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%; /* Use full width for smaller screens */
+    }
+
+    .home-content, .atelier-content, .machine-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .home-title, .atelier-title, .machine-title {
+        width: 100%;
+    }
+
+    .home-information, .home-name, 
+    .atelier-information, .atelier-name, 
+    .machine-information, .machine-name {
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .home-img, .atelier-img, .machine-img {
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        height: auto;
+        position: static;
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    .home-name, .atelier-name, .machine-name {
+        font-size: 24px;
+    }
+
+    .home-information, .atelier-information, .machine-information {
+        font-size: 16px;
+    }
+
+    .home-img, .atelier-img, .machine-img {
+        height: 80px;
+        width: 80px;
+    }
+}

@@ -5,5 +5,7 @@ export interface usine{
     nomUsine : string,
     adresse : string,
     chefUsine : string,
-    idAtelier : atelier[]    
+    nombrePersonne : number,
+    nombreMachines : number,
+    idAtelier : atelier[]   
 }

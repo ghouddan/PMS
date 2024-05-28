@@ -11,8 +11,8 @@
   </div>
 
   <div class="atelier-sidebar"  *ngIf="ACroute === 'atelier'">
-   <app-production-view></app-production-view>
-   <div class="equipe">
+    <app-production-view [selectedMachineId]="selectedMachineId"></app-production-view>
+    <div class="equipe">
 
    </div>
   </div>

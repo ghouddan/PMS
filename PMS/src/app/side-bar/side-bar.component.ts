@@ -4,6 +4,7 @@ import { NgIf } from '@angular/common';
 import { ActivatedRoute, UrlSegment, Router } from '@angular/router';
 import { RoundAdvanceBarComponent } from '../round-advance-bar/round-advance-bar.component';
 import { ProductionViewComponent } from '../production-view/production-view.component';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-side-bar',
@@ -20,17 +21,28 @@ import { ProductionViewComponent } from '../production-view/production-view.comp
 export class SideBarComponent implements OnInit{
 
   ACroute : string = "usines";
+  selectedMachineId : number = 0;
+  
 
   constructor(private route:ActivatedRoute, private router : Router){}
   ngOnInit(): void {
-     this.route.url.subscribe(UrlSegment =>
-        {
-          this.ACroute = UrlSegment[UrlSegment.length - 1].path;
+    this.route.url.subscribe(urlSegments => {
+      // Extract the base route segment
+      if (urlSegments.length > 1) {
+        this.ACroute = urlSegments[urlSegments.length - 2].path;
+      } else {
+        this.ACroute = urlSegments[0].path;
+      }
 
-        }
-      )
+      // Check if there's an additional ID parameter
+      if (urlSegments.length > 1) {
+        const id = +urlSegments[urlSegments.length - 1].path;
+        // Retrieve filtered data based on the ID
+      }
+    });
   }
 
+  
   logout() : void{
     this.router.navigate(['/']);  }
 }

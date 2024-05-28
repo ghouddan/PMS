@@ -1,55 +1,36 @@
-<div class="container" *ngIf="ACroute == 'home'">
-    <ul>
-    
-        <li *ngFor="let item of machine">
-            <div class="content" (click)="modify(item.id)">
-           <h1>{{item.nomMachine}}</h1> 
-           <p>produit :{{item.product}}</p>
-           <p>production par heur : {{item.rendement}}</p>
-           </div>
-        </li>
-</ul>
+<div class="container" *ngIf="ACroute === 'home'">
+  <ul>
+    <li *ngFor="let usine of usines">
+      <div class="content" (dblclick)="navigateToAtelier(usine.id)">
+        <h1>{{ usine.nomUsine }}</h1>
+        <p>Adresse: {{ usine.adresse }}</p>
+        <p>Nombre de personne: {{ usine.nombrePersonne }}</p>
+      </div>
+    </li>
+  </ul>
 </div>
 
-<div class="container" *ngIf="ACroute == 'fact'">
-    <ul>
-    
-        <li *ngFor="let item of product">
-            <div class="content" (click)="modify(item.id)">
-           <h1>{{item.titre}}</h1> 
-           <p>Quantié :{{item.quantiite}}</p>
-           <p>Durée : {{item.dure}}</p>
-           </div>
-        </li>
-</ul>
+<div class="container" *ngIf="ACroute === 'fact'">
+  <ul>
+    <li *ngFor="let atelier of ateliers">
+      <div class="content" (click)="modify(atelier.id)" (dblclick)="navigateToMachine(atelier.id)">
+        <h1>{{ atelier.nomAtelier }}</h1>
+        <p>Chef d'atelier : {{ atelier.chefAtelier }}</p>
+        <p>Produit : {{ atelier.capaciteMaximale}}</p>
+      </div>
+    </li>
+  </ul>
 </div>
 
-
-<div class="container" *ngIf="ACroute == 'atelier'">
-    <ul>
-    
-        <li *ngFor="let item of machine">
-            <div class="content" (click)="modify(item.id)">
-           <h1>{{item.nomMachine}}</h1> 
-           <p>produit :{{item.product}}</p>
-           <p>production par heur : {{item.rendement}}</p>
-           </div>
-        </li>
-</ul>
-</div>
-
-<div class="container_etat" *ngIf="ACroute == 'machine'">
-    <h1>Etat présent:</h1>
-    <div class="etat">
-        <div class="div_flex">
-            <p>Etat :</p>
-            <p>Erreur :</p>
-        </div>
-        <p>vitesse : </p>
-        <p>Consomation : </p>
-        <p>Durée de travaille: </p>
-        
-
-    </div>
+<div class="container" *ngIf="ACroute === 'atelier' || ACroute === 'machine'">
+  <ul>
+    <li *ngFor="let machine of machines">
+      <div class="content" (dblclick)="onMachineDoubleClicked(machine.id)">
+        <h1>{{ machine.nomMachine }}</h1>
+        <p>Produit: {{ machine.productName }}</p>
+        <p>fonction : {{ machine.fonction }}</p>
+      </div>
+    </li>
+  </ul>
 </div>
 

@@ -33,18 +33,19 @@
       opacity: 0.6;
     }
 
-    .usine-sidebar{
-    background-color: rgba(238, 240, 242, 1);
-    color: aliceblue;
-    width: 300px; 
-    height: calc(100vh - 70px);
-    position: fixed;
-    top: 70px; 
-    right: 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    }
+/* Sidebar */
+.usine-sidebar {
+  background-color: rgba(238, 240, 242, 1);
+  color: aliceblue;
+  width: 300px; 
+  height: calc(100vh - 70px);
+  position: fixed;
+  top: 70px; 
+  right: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
     .container{
       background-color: rgba(255, 255, 255, 1);
@@ -65,33 +66,44 @@
       justify-content: space-between;
       }
   
-    @media screen and (max-width: 768px) {
-        .navigation {
-          width: 40%; /* Adjusted width for navigation links */
-        }
-      
-        .profile {
-          width: 30%; /* Adjusted width for profile */
-        }
-      
-        .profile-info {
-          padding-left: 20px; /* Adjusted padding for profile info */
-          width: 30%;
-        }
-      
-        .profile-image {
-          margin-right: 20px; /* Adjusted margin for profile image */
-        }
-      
-        .element p {
-          font-size: 14px; /* Adjusted font size for navigation links */
-        }
-      
-        .sidebar {
-          width: 200px; /* Adjusted width for sidebar */
-        }
-        .logoutButton{
-          width: 150px;
-        }
-      }
-      
+    /* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .container_usine {
+      width: 100%; /* Use full width for smaller screens */
+  }
+  .usine-content {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  .usine-title {
+      width: 100%;
+  }
+  .usine-information, .usine-name {
+      padding-left: 0;
+      padding-right: 0;
+      text-align: center;
+      width: 100%;
+  }
+  .usine-img {
+      margin: 20px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .container_usine {
+      height: auto;
+      position: static;
+      margin-top: 20px;
+      padding: 10px;
+  }
+  .usine-name {
+      font-size: 24px;
+  }
+  .usine-information {
+      font-size: 16px;
+  }
+  .usine-img {
+      height: 80px;
+      width: 80px;
+  }
+}

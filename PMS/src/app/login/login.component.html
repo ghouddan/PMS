@@ -8,9 +8,9 @@
         <p  class="lable">Password</p>
         <div class="row">
             <div class="input">
-                <input type="password" name="password" [(ngModel)]="password" (change)="_login()">
+                <input type="password" name="password" [(ngModel)]="password">
             </div>
-            <button class="button" (click)="_login()" >Se Connecter</button>
+            <button class="button" (click)="_login()"  (change)="_login()">Se Connecter</button>
         </div>
     </div>
 </div>

@@ -10,14 +10,10 @@ import { RoundAdvanceBarComponent } from './round-advance-bar/round-advance-bar.
 import { ProductionViewComponent } from './production-view/production-view.component';
 
 export const routes: Routes = [
-    {path : '', component : LoginComponent},
-    // {path : "navbar", component :NavbarComponent},
-    {path : 'fact', component : UsinesComponent},
-    // {path : 'fact', component : InformationBarComponent},
-    {path : 'machine', component : MachinesComponent},
-    {path : 'atelier', component : AteliersComponent},
-    {path:'home', component:HomeComponent},
-    {path : 'bar', component : ProductionViewComponent}
-
-    
+  { path: '', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'fact/:usineId', component: UsinesComponent },
+  { path: 'atelier/:atelierId', component: AteliersComponent },
+  { path: 'machine/:atelierId', component: MachinesComponent },
+  { path: 'bar', component: ProductionViewComponent }
 ];

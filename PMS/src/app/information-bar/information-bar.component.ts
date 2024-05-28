@@ -1,56 +1,101 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { UsineService } from '../services/usine/usine.service';
+import { AtelierService } from '../services/atelier/atelier.service';
+import { MachineService } from '../services/machines/machine.service';
 
 @Component({
   selector: 'app-information-bar',
   standalone: true,
   imports: [NgIf],
   templateUrl: './information-bar.component.html',
-  styleUrl: './information-bar.component.css'
+  styleUrls: ['./information-bar.component.css']
 })
-export class InformationBarComponent implements OnInit{
+export class InformationBarComponent implements OnInit {
 
-  state : string = "usine"
-  ACroute : string = ''
+  ACroute: string = '';
 
-  // homme data
+  // Home data
   user: string = "Mohammed";
-  profition : string = "Chef de production";
+  profition: string = "Chef de production";
 
-  // usine data
-  usinName: string = "Usine Rabat Av.AlFadila";
-  chef : string = " Senbati Nizar";
-  nombrePersonne : number = 20;
-  nombreMUsine : number = 10;
+  // Usine data
+  usinName: string = "";
+  chef: string = "";
+  nombrePersonne: number = 0;
+  nombreMUsine: number = 0;
 
+  // Atelier data
+  AtelierName: string = "";
+  chefAtelier: string = "";
+  nombrePAtelier: number = 0;
+  nombremachine: number = 0;
+  capaciteAtelier: string = "";
 
-  // atelier data 
+  // Machine data
+  machine: string = "";
+  chefMachien: string = "";
+  atelier_id: number = 0;
+  capacite: string = "";
 
-  AtelierName: string = "Usine Rabat Av.AlFadila";
-  chefAtelier : string = " Senbati Nizar";
-  nombrePAtelier : number = 20;
-  nombremachine : number = 10;
-  capaciteAtelier : string = "10list/jours"
+  constructor(
+    private route: ActivatedRoute,
+    private usineService: UsineService,
+    private atelierService: AtelierService,
+    private machineService: MachineService
+  ) { }
 
-  // machien
-  machine  : string = "Machine Soudage id2011";
-  chefMachien : string = " Senbati Nizar";
-  atelier_id : number = 2313 
-  capacite : string = "10list/jours"
-
-  constructor(private route : ActivatedRoute){}
-
-  ngOnInit():void{
-    this.route.url.subscribe(UrlSegment =>
-      {
-        this.ACroute = UrlSegment[UrlSegment.length - 1].path
+  ngOnInit(): void {
+    this.route.url.subscribe(urlSegments => {
+      if (urlSegments.length > 1) {
+        this.ACroute = urlSegments[urlSegments.length - 2].path;
+      } else {
+        this.ACroute = urlSegments[0].path;
       }
-    )
-    console.log(this.ACroute)
+
+      // Check if there's an additional ID parameter
+      if (urlSegments.length > 1) {
+        const id = +urlSegments[urlSegments.length - 1].path;
+        if (this.ACroute === 'fact') {
+          this.loadUsineData(id);
+        } else if (this.ACroute === 'atelier') {
+          this.loadAtelierData(id);
+        } else if (this.ACroute === 'machine') {
+          this.loadMachineData(id);
+        }
+      }
+    });
   }
-  
 
+  loadUsineData(usineId: number): void {
+    const usine = this.usineService.getUsineById(usineId);
+    if (usine) {
+      this.usinName = usine.nomUsine;
+      this.chef = usine.chefUsine;
+      this.nombrePersonne = usine.nombrePersonne;
+      this.nombreMUsine = usine.nombreMachines;
+    }
+  }
+
+  loadAtelierData(atelierId: number): void {
+    const atelier = this.atelierService.getAtelierById(atelierId);
+    if (atelier) {
+      this.AtelierName = atelier.nomAtelier;
+      this.chefAtelier = atelier.chefAtelier;
+      this.nombrePAtelier = atelier.nombrePersonne;
+      this.nombremachine = atelier.nombreMachines;
+      this.capaciteAtelier = atelier.capaciteMaximale;
+    }
+  }
+
+  loadMachineData(machineId: number): void {
+    const machine = this.machineService.getMachineById(machineId);
+    if (machine) {
+      this.machine = machine.nomMachine;
+      this.chefMachien = machine.chefMachine;
+      this.atelier_id = machine.idAtelier;
+       this.capacite = machine.capaciteMaximale;
+    }
+  }
 }
-
-

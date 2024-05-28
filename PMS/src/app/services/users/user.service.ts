@@ -9,7 +9,7 @@ export class UserService {
   private users: UserData[] = [
     {
       id: 1,
-      nom: 'mohammed',
+      nom: 'GH.Mohammed',
       prenom: 'ghouddan',
       fonction: 'CHP',
       email: 'exemple@example.com',
@@ -22,7 +22,7 @@ export class UserService {
     },
     {
       id: 2,
-      nom: 'aymane',
+      nom: 'GH.Mohammed',
       prenom: 'John',
       fonction: 'CHU',
       email: 'exemple01@example.com',

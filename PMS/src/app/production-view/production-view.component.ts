@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { RoundAdvanceBarComponent } from '../round-advance-bar/round-advance-bar.component';
 import { CommonModule } from '@angular/common';
 import {
@@ -6,6 +6,8 @@ import {
 import { AngularGradientProgressbarModule } from 'angular-gradient-progressbar';
 import { ModuleWithProviders } from '@angular/core';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MachineService } from '../services/machines/machine.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-production-view',
@@ -27,11 +29,36 @@ export class ProductionViewComponent implements OnInit{
   midiun: boolean = false;
   low: boolean = false;
   status : number = 9;
+  // @Input() selectedMachine: machine | null = null; // Receive selected machine from parent component
+  // ACroute: string = '';
+  @Input() selectedMachineId: number | null = null;
+  machine: any | null = null;
 
+  constructor(private route: ActivatedRoute,private machineService: MachineService
+  ){}
 
   
   ngOnInit(): void {
     this.setStatus();
+    // this.route.url.subscribe(urlSegments => {
+    //   if (urlSegments.length > 1) {
+    //     this.ACroute = urlSegments[urlSegments.length - 2].path;
+    //   } else {
+    //     this.ACroute = urlSegments[0].path;
+    //   }
+
+    //   // Check if there's an additional ID parameter
+    //   if (urlSegments.length > 1) {
+    //     const id = +urlSegments[urlSegments.length - 1].path;
+    //      if (this.ACroute === 'machine') {
+    //       this.loadMachineData(id);
+
+    //     }
+    //   }
+    // });
+    if (this.selectedMachineId) {
+      this.loadMachineData(this.selectedMachineId);
+    }
      
   }
 
@@ -61,6 +88,10 @@ export class ProductionViewComponent implements OnInit{
       this.hight = true;
     }
   
+  }
+
+  loadMachineData(machineId: number): void {
+    this.machine = this.machineService.getMachineById(machineId);
   }
 
 

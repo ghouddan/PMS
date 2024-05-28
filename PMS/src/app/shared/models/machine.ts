@@ -1,4 +1,3 @@
-import { atelier } from "./atelier";
 
 export interface machine{
     id : number,
@@ -6,5 +5,9 @@ export interface machine{
     typeMachine: string ,
     fonction : string,
     etat : boolean,
-    idAtelier : atelier
+    capaciteMaximale : string,
+    chefMachine : string,
+    idAtelier : number
+    productName: string;
+    production: number;
 }
