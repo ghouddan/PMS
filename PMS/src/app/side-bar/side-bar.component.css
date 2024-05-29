@@ -65,6 +65,20 @@
       flex-direction: column;
       justify-content: space-between;
       }
+
+      .container1{
+        height: 300px;
+        width: 90%;
+        margin: auto;
+        background-color: white;
+      }
+      h2{
+        font-size: 30px;
+        color: black;
+        font-weight: bolder;
+        margin-top: 10px;
+        margin-left: 15px;
+      }
   
     /* Media Queries for responsiveness */
 @media (max-width: 768px) {
@@ -107,3 +121,5 @@
       width: 80px;
   }
 }
+
+

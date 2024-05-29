@@ -11,8 +11,21 @@
   </div>
 
   <div class="atelier-sidebar"  *ngIf="ACroute === 'atelier'">
-    <app-production-view [selectedMachineId]="selectedMachineId"></app-production-view>
+    <app-production-view ></app-production-view>
     <div class="equipe">
 
    </div>
   </div>
+
+  <div class="atelier-sidebar"  *ngIf="ACroute === 'machine'">
+    <div class="produit">
+      <h2>Produit en cours </h2>
+      <div class="container1">
+          <p>{{selectedMachine?.productName}}</p>
+      </div>
+  
+     </div>
+    <app-round-advance-bar></app-round-advance-bar>
+
+  </div>
+

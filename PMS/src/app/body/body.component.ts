@@ -32,6 +32,7 @@ export class BodyComponent implements OnInit {
   usines: any[] = [];
   ateliers: any[] = [];
   machines: any[] = [];
+  machineConfig : machine | undefined;
   selectedMachine: machine | null = null;
 
 
@@ -47,10 +48,14 @@ export class BodyComponent implements OnInit {
         const usineId = +urlSegments[urlSegments.length - 1].path;
         this.ateliers = this.atelierService.getAteliersByUsineId(usineId);
         console.log('Filtered ateliers:', this.ateliers);
-      } else if ((this.ACroute === 'atelier' || this.ACroute === 'machine') && urlSegments.length > 1) {
+      } else if ((this.ACroute === 'atelier') && urlSegments.length > 1) {
         const atelierId = +urlSegments[urlSegments.length - 1].path;
         this.machines = this.machineService.getMachinesByAtelierId(atelierId);
         console.log('Filtered machines:', this.machines);
+      }else if(this.ACroute === 'machine' && urlSegments.length > 1){
+        const machineId = +urlSegments[urlSegments.length - 1].path;
+        this.machineConfig = this.machineService.getMachineById(machineId);
+        console.log("machine Id", this.machineConfig);
       }
     });
 
@@ -80,5 +85,10 @@ export class BodyComponent implements OnInit {
   onMachineDoubleClicked(machine: machine): void {
     this.selectedMachine = machine;
   }
+  navigateToMachineconfig(machineId : number): void{
+    this.router.navigate(['/machine', machineId]);
+  }
+
+
   
 }

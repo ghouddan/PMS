@@ -5,6 +5,8 @@ import { ActivatedRoute, UrlSegment, Router } from '@angular/router';
 import { RoundAdvanceBarComponent } from '../round-advance-bar/round-advance-bar.component';
 import { ProductionViewComponent } from '../production-view/production-view.component';
 import { HostListener } from '@angular/core';
+import { machine } from '../shared/models/machine';
+import { MachineService } from '../services/machines/machine.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -20,11 +22,13 @@ import { HostListener } from '@angular/core';
 })
 export class SideBarComponent implements OnInit{
 
-  ACroute : string = "usines";
+  ACroute : string = "";
   selectedMachineId : number = 0;
+  selectedMachine : machine | undefined;
   
 
-  constructor(private route:ActivatedRoute, private router : Router){}
+  constructor(private route:ActivatedRoute, private router : Router, private machineService: MachineService
+  ){}
   ngOnInit(): void {
     this.route.url.subscribe(urlSegments => {
       // Extract the base route segment
@@ -35,9 +39,12 @@ export class SideBarComponent implements OnInit{
       }
 
       // Check if there's an additional ID parameter
-      if (urlSegments.length > 1) {
+      if (this.ACroute === "machine"  || urlSegments.length > 1) {
         const id = +urlSegments[urlSegments.length - 1].path;
-        // Retrieve filtered data based on the ID
+        this.selectedMachine = this.machineService.getMachineById(id);
+        console.log("machine sidebar selected ", this.selectedMachine);
+
+        
       }
     });
   }

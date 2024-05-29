@@ -8,6 +8,7 @@ import { ModuleWithProviders } from '@angular/core';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { MachineService } from '../services/machines/machine.service';
 import { ActivatedRoute } from '@angular/router';
+import { machine } from '../shared/models/machine';
 
 @Component({
   selector: 'app-production-view',
@@ -30,9 +31,8 @@ export class ProductionViewComponent implements OnInit{
   low: boolean = false;
   status : number = 9;
   // @Input() selectedMachine: machine | null = null; // Receive selected machine from parent component
-  // ACroute: string = '';
-  @Input() selectedMachineId: number | null = null;
-  machine: any | null = null;
+   ACroute: string = '';
+  machine: machine | undefined;
 
   constructor(private route: ActivatedRoute,private machineService: MachineService
   ){}
@@ -40,25 +40,23 @@ export class ProductionViewComponent implements OnInit{
   
   ngOnInit(): void {
     this.setStatus();
-    // this.route.url.subscribe(urlSegments => {
-    //   if (urlSegments.length > 1) {
-    //     this.ACroute = urlSegments[urlSegments.length - 2].path;
-    //   } else {
-    //     this.ACroute = urlSegments[0].path;
-    //   }
+    this.route.url.subscribe(urlSegments => {
+      if (urlSegments.length > 1) {
+        this.ACroute = urlSegments[urlSegments.length - 2].path;
+      } else {
+        this.ACroute = urlSegments[0].path;
+      }
 
-    //   // Check if there's an additional ID parameter
-    //   if (urlSegments.length > 1) {
-    //     const id = +urlSegments[urlSegments.length - 1].path;
-    //      if (this.ACroute === 'machine') {
-    //       this.loadMachineData(id);
-
-    //     }
-    //   }
-    // });
-    if (this.selectedMachineId) {
-      this.loadMachineData(this.selectedMachineId);
-    }
+      // Check if there's an additional ID parameter
+      if (this.ACroute === "machine" || urlSegments.length > 1) {
+        const id = +urlSegments[urlSegments.length - 1].path;
+        this.machine = this.machineService.getMachineById(id);
+        
+      }
+    });
+    // if (this.selectedMachineId) {
+    //   this.loadMachineData(this.selectedMachineId);
+    // }
      
   }
 
@@ -93,6 +91,7 @@ export class ProductionViewComponent implements OnInit{
   loadMachineData(machineId: number): void {
     this.machine = this.machineService.getMachineById(machineId);
   }
+
 
 
  

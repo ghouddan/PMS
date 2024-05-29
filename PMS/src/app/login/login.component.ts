@@ -26,7 +26,7 @@ export class LoginComponent {
         this.router.navigate(['/home']);
       }
       else if (user.fonction == "CHU"){
-          this.router.navigate(['/fact']);
+          this.router.navigate(['/fact/1']);
       }
       else{
         this.router.navigate(['atelier']);

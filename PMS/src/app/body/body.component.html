@@ -22,15 +22,33 @@
   </ul>
 </div>
 
-<div class="container" *ngIf="ACroute === 'atelier' || ACroute === 'machine'">
+<div class="container" *ngIf="ACroute === 'atelier'">
   <ul>
     <li *ngFor="let machine of machines">
-      <div class="content" (dblclick)="onMachineDoubleClicked(machine.id)">
+      <div class="content" (dblclick)="navigateToMachineconfig(machine.id)">
         <h1>{{ machine.nomMachine }}</h1>
         <p>Produit: {{ machine.productName }}</p>
         <p>fonction : {{ machine.fonction }}</p>
       </div>
     </li>
   </ul>
+</div>
+
+<div class="container_etat" *ngIf="ACroute == 'machine'">
+  <h1>Etat présent: </h1>
+  <div class="etat">
+      <div class="div_flex">
+          <p>Etat :{{machineConfig?.etat ? 'En marche' : 'Arret'}}</p>
+
+
+
+          <p>Erreur : {{machineConfig?.fonction}}</p>
+      </div>
+      <p>vitesse : </p>
+      <p>Consomation : </p>
+      <p>Durée de travaille: </p>
+
+
+  </div>
 </div>
 

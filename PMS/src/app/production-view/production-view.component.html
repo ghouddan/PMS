@@ -3,16 +3,17 @@
     <div class="container1">
         <div class="content">
         <p class="p">produit</p>
-        <div class="counter"><p>{{count}}</p></div>
+        <div class="counter" id="produit"><p>{{machine?.production}}</p></div>
 
       </div>
       <div class="content">
         <p class="p">Etat machine</p>
         <!-- <angular-gradient-progressbar [type]="1" [progressBarWidth]="10" [value] ="30" [barCount]="1" [showToolTip]="false"> </angular-gradient-progressbar>   -->
-        <div class="etat" [ngClass]="{'red' : hight, 'gren': midiun, 'yelow': low}"></div>
+        <div class="etat" [ngClass]="{'red' : hight, 'gren': midiun, 'yelow': low}" id="etat"></div>
       </div>
         <div class="content">
         <p class="p">Objectif</p>
+        <p id="objectif"></p>
       </div>
       <div class="content">
         <p class="p">Avencement</p>
